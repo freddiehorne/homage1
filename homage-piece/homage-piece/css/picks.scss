@@ -1,3 +1,14 @@
+.nav-links a:nth-child(3) {
+	border-bottom: #c9a16e solid 2px;
+}
+.nav-links a:nth-child(4) {
+	border-bottom: none;
+}
+
+.picks-page {
+	width: 100%;
+}
+
 .picks-page h1 {
 	text-align: center;
 	margin: 0 auto;
@@ -11,4 +22,45 @@
 
 .picks-page h1:nth-child(2) {
 	font-weight: 300;
+}
+
+.picks {
+	width: 90%;
+	margin: auto;
+	margin-bottom: 2em;
+	position: relative;
+}
+
+.picks img {
+	width: 100%;
+	transition: filter 0.2s linear;
+	cursor: pointer;
+}
+
+.picks img:hover {
+	filter: contrast(60%) brightness(120%);
+}
+
+.picks-icon {
+	display: flex;
+	flex-direction: column;
+	height: 6em;
+	width: 3em;
+	position: absolute;
+	bottom: 4px;
+	right: 0;
+
+	background-color: #ededed;
+}
+
+.picks-icon i {
+	width: 3em;
+	height: 3em;
+	padding-top: 1em;
+	padding-left: 1em;
+}
+
+.picks-icon i:hover {
+	background-color: #ffffff;
+	cursor: pointer;
 }
