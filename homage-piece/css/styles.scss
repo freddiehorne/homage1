@@ -177,6 +177,7 @@ nav a {
 	align-items: center;
 	border-bottom: darkgray 1px solid;
 	overflow-x: auto;
+	overflow-y: hidden;
 	white-space: nowrap;
 }
 
@@ -222,7 +223,7 @@ nav h1 {
 	flex-wrap: wrap;
 	flex-direction: column;
 	width: 100%;
-	min-height: 130vh;
+	min-height: 145vh;
 }
 
 .menu-slide {

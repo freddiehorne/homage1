@@ -1,30 +1,99 @@
-.nav-links a:nth-child(6) {
+.nav-links a:nth-child(5) {
 	border-bottom: #c9a16e solid 2px;
 }
 .nav-links a:nth-child(4) {
 	border-bottom: none;
 }
 
-.special:nth-child(2) {
-	background-image: url(https://img.nowness.com/nowness-frontend/KBl5GTfiKeVwBrcIJIQi_KissoftheRabbitGod_Still_82.jpg);
-}
-
-.special:nth-child(3) {
-	background-image: url(https://img.nowness.com/nowness-frontend/kThLkdxyRWOy35cvuauR_Screen%20Shot%202019-05-29%20at%2016.57.24.jpg);
-}
-
-.special:nth-child(4) {
-	background-image: url(https://img.nowness.com/nowness-frontend/2eFbCgE5QA2o2rBiSoqL_Screen%20Shot%202018-06-22%20at%2011.58.19.jpg);
-}
-
-.special:nth-child(5) {
-	background-image: url(https://img.nowness.com/nowness-frontend/suT6DATHRlOnsCz366GF_Screen%20Shot%202018-05-17%20at%2014.42.48.jpg);
-}
-
-.special:nth-child(6) {
-	background-image: url(https://img.nowness.com/nowness-frontend/hXFoV6yTRYiiXx3bNzL4_Screen%20Shot%202018-05-22%20at%2011.37.07.jpg);
-}
-
 .special-container {
 	border-top: #c9a16e 1px solid;
+	padding-bottom: 20px;
+}
+
+.special {
+	height: 190px;
+	background-size: cover;
+	background-position: center;
+
+	color: rgb(225, 224, 224);
+	text-align: center;
+	text-shadow: 1px 1px 10px black;
+}
+
+.special h2 {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-transform: initial;
+	padding-top: 2em;
+}
+
+.special button {
+	display: none;
+}
+
+.special p {
+	font-weight: lighter;
+}
+
+.special-container:nth-child(2) > div {
+	background-image: url(/assets/images/special-bg1.jpeg);
+}
+
+.special-container:nth-child(3) > div {
+	background-image: url(/assets/images/special-bg2.jpg);
+}
+
+.special-container:nth-child(4) > div {
+	background-image: url(/assets/images/special-bg3.jpg);
+}
+
+.special-container:nth-child(5) > div {
+	background-image: url(/assets/images/special-bg4.jpg);
+}
+
+.special-container:nth-child(6) > div {
+	background-image: url(/assets/images/special-bg5.jpg);
+}
+
+@media screen and (min-width: 599px) {
+	.special-container {
+		padding-bottom: 40px;
+	}
+
+	.special {
+		height: 440px;
+		margin-top: 40px;
+	}
+
+	.special h2 {
+		font-size: 2.6em;
+	}
+
+	.special p {
+		font-size: 20px;
+	}
+
+	.special button {
+		display: initial;
+		color: rgb(225, 224, 224);
+		background-color: transparent;
+		border: solid 1px rgb(225, 224, 224);
+		text-shadow: 1px 1px 10px black;
+
+		text-transform: uppercase;
+		padding: 1em 2em;
+		margin-bottom: 2em;
+		font-size: 0.8em;
+		cursor: pointer;
+	}
+	.special button:hover {
+		border-bottom: solid 2px rgb(225, 224, 224);
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.special-container {
+		width: 70%;
+		margin: auto;
+	}
 }

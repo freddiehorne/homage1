@@ -57,7 +57,7 @@
   height: 6em;
   width: 3em;
   position: absolute;
-  bottom: 4px;
+  bottom: 0;
   right: 0;
   background-color: #ededed7e;
 }
