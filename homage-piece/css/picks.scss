@@ -1,27 +1,35 @@
-.nav-links a:nth-child(3) {
-	border-bottom: #c9a16e solid 2px;
-}
-.nav-links a:nth-child(4) {
-	border-bottom: none;
+// **********COLOR VARIABLES**********
+$backgroundColor: #fff;
+$goldColor: #c9a16e;
+$goldBorder: #c9a16e 2px solid;
+$borderColor: #a9a9a9 1px solid;
+$blackColor: #000;
+$cardTextColor: #e1e0e0;
+// **********************************
+
+.nav-links a {
+	&:nth-child(3) {
+		border-bottom: $goldBorder;
+	}
+	&:nth-child(4) {
+		border-bottom: none;
+	}
 }
 
 .picks-page {
 	width: 100%;
-}
-
-.picks-page h1 {
-	text-align: center;
-	margin: 0 auto;
-}
-
-.picks-page h1:nth-child(1) {
-	font-size: 16px;
-	letter-spacing: 1px;
-	margin-top: 3em;
-}
-
-.picks-page h1:nth-child(2) {
-	font-weight: 300;
+	h1 {
+		text-align: center;
+		margin: 0 auto;
+		&:nth-child(1) {
+			font-size: 16px;
+			letter-spacing: 1px;
+			margin-top: 3em;
+		}
+		&:nth-child(2) {
+			font-weight: 300;
+		}
+	}
 }
 
 .picks {
@@ -29,19 +37,18 @@
 	margin: auto;
 	margin-bottom: 2em;
 	position: relative;
-}
-
-.picks img {
-	width: 100%;
-	transition: filter 0.2s linear;
-	cursor: pointer;
-}
-
-.picks img:hover {
-	filter: contrast(60%) brightness(120%);
+	img {
+		width: 100%;
+		transition: filter 0.2s linear;
+		cursor: pointer;
+		&:hover {
+			filter: contrast(60%) brightness(120%);
+		}
+	}
 }
 
 .picks-icon {
+	background-color: #ededed7e;
 	display: flex;
 	flex-direction: column;
 	height: 6em;
@@ -49,20 +56,16 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
-
-	background-color: #ededed7e;
-}
-
-.picks-icon i {
-	width: 3em;
-	height: 3em;
-	padding-top: 1em;
-	padding-left: 1em;
-}
-
-.picks-icon i:hover {
-	background-color: #ffffff79;
-	cursor: pointer;
+	i {
+		width: 3em;
+		height: 3em;
+		padding-top: 1em;
+		padding-left: 1em;
+		&:hover {
+			background-color: #ffffff79;
+			cursor: pointer;
+		}
+	}
 }
 
 @media screen and (min-width: 599px) {
@@ -84,11 +87,10 @@
 		width: 100%;
 		height: 100%;
 		margin-bottom: 0;
-	}
-
-	.picks img {
-		width: 100%;
-		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 

@@ -1,5 +1,5 @@
 .nav-links a:nth-child(5) {
-  border-bottom: #c9a16e solid 2px;
+  border-bottom: #c9a16e 2px solid;
 }
 
 .nav-links a:nth-child(4) {
@@ -78,6 +78,7 @@
     text-transform: uppercase;
     padding: 1em 2em;
     margin-bottom: 2em;
+    margin-top: 3em;
     font-size: 0.8em;
     cursor: pointer;
   }

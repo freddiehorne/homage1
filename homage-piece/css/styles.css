@@ -92,7 +92,7 @@ html {
 }
 
 body {
-  background-color: #e8e8e8;
+  background-color: #fff;
   font-size: 1.6rem;
   margin: 0;
   padding: 0;
@@ -104,7 +104,6 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  background-color: #ffffff;
   z-index: 99;
 }
 
@@ -118,6 +117,14 @@ nav {
           flex-direction: column;
 }
 
+nav h1 {
+  font-size: 1.3em;
+  font-weight: 300;
+  margin: 0;
+  padding-left: 2em;
+  text-transform: uppercase;
+}
+
 nav a {
   text-decoration: none;
   color: #000;
@@ -128,8 +135,9 @@ nav a {
   display: -ms-flexbox;
   display: flex;
   padding: 0.8em;
-  border-bottom: darkgray 1px solid;
+  border-bottom: #a9a9a9 1px solid;
   position: relative;
+  background-color: #fff;
 }
 
 .burger {
@@ -189,18 +197,11 @@ nav a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: darkgray 1px solid;
+  border-bottom: #a9a9a9 1px solid;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-}
-
-nav h1 {
-  font-size: 1.3em;
-  font-weight: 300;
-  margin: 0;
-  padding-left: 2em;
-  text-transform: uppercase;
+  background-color: #fff;
 }
 
 .nav-links a {
@@ -213,7 +214,7 @@ nav h1 {
 }
 
 .nav-links a:nth-child(4) {
-  border-bottom: #c9a16e solid 2px;
+  border-bottom: #c9a16e 2px solid;
 }
 
 .nav-links a:hover {
@@ -231,10 +232,11 @@ nav h1 {
   -webkit-transform: translateY(-120%);
           transform: translateY(-120%);
   overflow: auto;
+  z-index: -99;
 }
 
 .dropdown {
-  background-color: #ffffff;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,6 +250,34 @@ nav h1 {
   min-height: 145vh;
 }
 
+.dropdown .dropdown-icons {
+  height: 4.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.dropdown div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: #a9a9a9 1px solid;
+}
+
+.dropdown div a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.7em 0.7em 0.7em 1.7em;
+}
+
+.dropdown div:last-child {
+  border-bottom: none;
+}
+
 .menu-slide {
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
@@ -259,25 +289,7 @@ nav h1 {
 }
 
 .menu-slide a:hover {
-  border-left: #c9a16e solid 2px;
-}
-
-.dropdown div a {
-  color: #000;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 0.7em 0.7em 0.7em 1.7em;
-}
-
-.dropdown div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-bottom: darkgray 1px solid;
-}
-
-.dropdown div:last-child {
-  border-bottom: none;
+  border-left: #c9a16e 2px solid;
 }
 
 .flex-col {
@@ -288,16 +300,6 @@ nav h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.dropdown .dropdown-icons {
-  height: 4.5em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
 }
 
 .dropdown-icons i {
@@ -344,9 +346,9 @@ h2 {
   text-align: center;
 }
 
-.crazy-img-part {
+.img-intro {
   height: calc(700px + 100vw);
-  border-bottom: #c9a16e 1px solid;
+  border-bottom: #c9a16e 2px solid;
   padding-bottom: 1em;
   position: relative;
 }
@@ -412,25 +414,25 @@ h2 {
 }
 
 .events {
-  border-bottom: #c9a16e solid 1px;
+  border-bottom: #c9a16e 2px solid;
 }
 
 .events h2 {
   font-weight: bold;
-  font-size: 1.2em;
-}
-
-.events > h2 {
-  font-weight: lighter;
 }
 
 .events p {
   font-weight: lighter;
-  text-shadow: 1px 1px 10px black;
+  text-shadow: 1px 1px 10px #000;
+  line-height: 2;
 }
 
 .events span {
   font-weight: bold;
+}
+
+.events > h2 {
+  font-weight: lighter;
 }
 
 .card {
@@ -446,7 +448,7 @@ h2 {
 }
 
 .card h2 {
-  text-shadow: 1px 1px 10px black;
+  text-shadow: 1px 1px 10px #000;
 }
 
 .card img {
@@ -470,7 +472,7 @@ h2 {
   color: #e1e0e0;
   background-color: transparent;
   border: solid 1px #e1e0e0;
-  text-shadow: 1px 1px 10px black;
+  text-shadow: 1px 1px 10px #000;
   text-transform: uppercase;
   padding: 1.5em 5em;
   margin-bottom: 2em;
@@ -484,13 +486,9 @@ h2 {
 
 .speakers {
   width: 100%;
-  border-bottom: #c9a16e solid 1px;
+  border-bottom: #c9a16e 2px solid;
   margin-top: 2em;
   padding-bottom: 2em;
-}
-
-.speakers h2 {
-  font-size: 1.2em;
 }
 
 .speakers img {
@@ -513,6 +511,7 @@ h2 {
 
 .speaker p {
   font-size: 15px;
+  line-height: 2;
 }
 
 .hosts {
@@ -541,6 +540,7 @@ h2 {
 
 .host p {
   font-size: 15px;
+  line-height: 2;
 }
 
 .footer-icons {
@@ -551,8 +551,8 @@ h2 {
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-  border-top: #c9a16e solid 1px;
-  border-bottom: #c9a16e solid 1px;
+  border-top: #c9a16e 2px solid;
+  border-bottom: #c9a16e 2px solid;
   padding: 0 2em;
   cursor: pointer;
 }
@@ -613,7 +613,7 @@ h2 {
   .main-page-heading-div {
     width: 70%;
   }
-  .crazy-img-part {
+  .img-intro {
     height: calc(700px + 110vw);
   }
   .main-page-poster-div {
@@ -633,6 +633,17 @@ h2 {
     width: 90%;
     gap: 1em;
     margin: auto;
+  }
+  .overlay button {
+    margin-top: 3em;
+  }
+  .card {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .card img {
+    padding-bottom: 0;
   }
   .card:nth-child(1) {
     -ms-grid-row: 1;
@@ -677,14 +688,6 @@ h2 {
     grid-area: bottom;
     margin-bottom: 2em;
   }
-  .card {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-  .card img {
-    padding-bottom: 0;
-  }
   .speaker,
   .host {
     display: -ms-grid;
@@ -707,6 +710,7 @@ h2 {
     padding-left: 16%;
   }
   .lower-nav {
+    overflow-x: hidden;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
@@ -750,6 +754,9 @@ h2 {
   .overlay h2 {
     font-size: 2em;
   }
+  .overlay button {
+    font-size: 0.8em;
+  }
   .events h2,
   .speakers h2,
   .hosts h2 {
@@ -786,10 +793,21 @@ h2 {
   .host img {
     margin-top: 3.5em;
   }
+  .footer-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
 }
 
 @media screen and (min-width: 1300px) {
-  .crazy-img-part {
+  .dropdown {
+    width: 35%;
+  }
+  .img-intro {
     height: calc(700px + 80vw);
   }
   .main-page-heading-div {

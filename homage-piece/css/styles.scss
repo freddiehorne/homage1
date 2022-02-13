@@ -97,8 +97,19 @@ html {
 	box-sizing: inherit;
 }
 
+@import "/css/picks.scss" // **********GENERAL VARIABLES**********
+	$backgroundColor: #fff;
+$goldColor: #c9a16e;
+$goldBorder: #c9a16e 2px solid;
+$borderColor: #a9a9a9 1px solid;
+$blackColor: #000;
+$cardTextColor: #e1e0e0;
+
+$textShadow: 1px 1px 10px #000;
+// **********************************
+
 body {
-	background-color: #e8e8e8;
+	background-color: $backgroundColor;
 	font-size: 1.6rem;
 	margin: 0;
 	padding: 0;
@@ -106,28 +117,35 @@ body {
 	overflow-x: hidden;
 }
 
+// **********NAV-BAR**********
 header {
 	position: sticky;
 	top: 0px;
-	background-color: #ffffff;
 	z-index: 99;
 }
 
 nav {
+	h1 {
+		font-size: 1.3em;
+		font-weight: 300;
+		margin: 0;
+		padding-left: 2em;
+		text-transform: uppercase;
+	}
 	display: flex;
 	flex-direction: column;
-}
-
-nav a {
-	text-decoration: none;
-	color: #000;
+	a {
+		text-decoration: none;
+		color: $blackColor;
+	}
 }
 
 .upper-nav {
 	display: flex;
 	padding: 0.8em;
-	border-bottom: darkgray 1px solid;
+	border-bottom: $borderColor;
 	position: relative;
+	background-color: $backgroundColor;
 }
 
 .burger {
@@ -140,22 +158,24 @@ nav a {
 }
 
 .burger-line {
-	background-color: #000;
+	background-color: $blackColor;
 	height: 2px;
 	width: 21px;
 	margin-bottom: 5px;
 }
 
-.burger.animate div:nth-child(1) {
-	transform: rotate(45deg) translate(6px, 4px);
-	background-color: #c9a16e;
-}
-.burger.animate div:nth-child(2) {
-	opacity: 0;
-}
-.burger.animate div:nth-child(3) {
-	transform: rotate(-45deg) translate(6px, -4px);
-	background-color: #c9a16e;
+.burger.animate {
+	div:nth-child(1) {
+		transform: rotate(45deg) translate(6px, 4px);
+		background-color: $goldColor;
+	}
+	div:nth-child(2) {
+		opacity: 0;
+	}
+	div:nth-child(3) {
+		transform: rotate(-45deg) translate(6px, -4px);
+		background-color: $goldColor;
+	}
 }
 
 .nav-icons {
@@ -163,11 +183,10 @@ nav a {
 	margin-right: 2em;
 	display: flex;
 	align-items: center;
-}
-
-.nav-icons i {
-	margin: 0 0.5em;
-	cursor: pointer;
+	i {
+		margin: 0 0.5em;
+		cursor: pointer;
+	}
 }
 
 .lower-nav {
@@ -175,18 +194,11 @@ nav a {
 	width: 100%;
 	display: flex;
 	align-items: center;
-	border-bottom: darkgray 1px solid;
+	border-bottom: $borderColor;
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
-}
-
-nav h1 {
-	font-size: 1.3em;
-	font-weight: 300;
-	margin: 0;
-	padding-left: 2em;
-	text-transform: uppercase;
+	background-color: $backgroundColor;
 }
 
 .nav-links a {
@@ -196,18 +208,16 @@ nav h1 {
 	padding: 0.5em 1em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	&:nth-child(4) {
+		border-bottom: $goldBorder;
+	}
+	&:hover {
+		color: $goldColor;
+	}
 }
+// ************************************************
 
-.nav-links a:nth-child(4) {
-	border-bottom: #c9a16e solid 2px;
-}
-
-.nav-links a:hover {
-	color: #c9a16e;
-}
-
-// ****************************************************
-
+// **********DROPDOWN MENU**********
 .dropdown-container {
 	width: 100vw;
 	height: 100vh;
@@ -215,40 +225,44 @@ nav h1 {
 	transition: transform 0.3s ease-in-out;
 	transform: translateY(-120%);
 	overflow: auto;
+	z-index: -99;
 }
 
 .dropdown {
-	background-color: #ffffff;
+	background-color: $backgroundColor;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	width: 100%;
 	min-height: 145vh;
+	.dropdown-icons {
+		height: 4.5em;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+	div {
+		display: flex;
+		border-bottom: $borderColor;
+		a {
+			color: $blackColor;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 0.7em 0.7em 0.7em 1.7em;
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+	}
 }
 
 .menu-slide {
 	transition: transform 0.3s ease-in-out;
 	transform: translateY(0);
 	position: absolute;
-}
-
-.menu-slide a:hover {
-	border-left: #c9a16e solid 2px;
-}
-
-.dropdown div a {
-	color: #000;
-	text-decoration: none;
-	text-transform: uppercase;
-	padding: 0.7em 0.7em 0.7em 1.7em;
-}
-
-.dropdown div {
-	display: flex;
-	border-bottom: darkgray 1px solid;
-}
-.dropdown div:last-child {
-	border-bottom: none;
+	a:hover {
+		border-left: $goldBorder;
+	}
 }
 
 .flex-col {
@@ -256,31 +270,23 @@ nav h1 {
 	flex-direction: column;
 }
 
-.dropdown .dropdown-icons {
-	height: 4.5em;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-}
 .dropdown-icons i {
 	align-self: center;
 	justify-self: center;
 	padding: 0.5em;
 	cursor: pointer;
-}
-
-.dropdown-icons i:hover {
-	color: #c9a16e;
+	&:hover {
+		color: $goldColor;
+	}
 }
 
 .sites-down {
 	flex-direction: column;
-}
-
-.sites-down a:nth-child(2),
-.sites-down a:nth-child(3),
-.sites-down a:nth-child(4) {
-	opacity: 0;
+	a:nth-child(2),
+	a:nth-child(3),
+	a:nth-child(4) {
+		opacity: 0;
+	}
 }
 
 .sites-down.sites-drop a:nth-child(2),
@@ -293,17 +299,18 @@ nav h1 {
 	transform: rotate(180deg);
 }
 
-// *********************************************
+// ******************************************
 
+// **********MAIN HEADING AND IMAGES**********
 h2 {
 	text-transform: uppercase;
 	font-weight: lighter;
 	text-align: center;
 }
 
-.crazy-img-part {
+.img-intro {
 	height: calc(700px + 100vw);
-	border-bottom: #c9a16e 1px solid;
+	border-bottom: $goldBorder;
 	padding-bottom: 1em;
 	position: relative;
 }
@@ -312,12 +319,11 @@ h2 {
 	width: 100%;
 	height: 700px;
 	z-index: -1;
-}
-
-.top-img-div img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .main-page-heading-div {
@@ -328,12 +334,11 @@ h2 {
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.main-page-heading-div img {
-	width: 100%;
-	margin: auto;
-	z-index: 1;
+	img {
+		width: 100%;
+		margin: auto;
+		z-index: 1;
+	}
 }
 
 .main-page-poster-div {
@@ -344,10 +349,9 @@ h2 {
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.main-page-poster-div img {
-	width: 100%;
+	img {
+		width: 100%;
+	}
 }
 
 .bottom-img-div {
@@ -357,36 +361,35 @@ h2 {
 	top: 700px;
 	left: 0;
 	z-index: -1;
+	img {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 1.2em;
+		object-fit: cover;
+	}
 }
 
-.bottom-img-div img {
-	width: 100%;
-	height: 100%;
-	padding-bottom: 1.2em;
-	object-fit: cover;
-}
+// *******************************************
 
-// ************************************************
+// **********EVENTS SECTION**********
 
 .events {
-	border-bottom: #c9a16e solid 1px;
-}
-
-.events h2 {
-	font-weight: bold;
-	font-size: 1.2em;
+	border-bottom: $goldBorder;
+	h2 {
+		font-weight: bold;
+	}
+	p {
+		font-weight: lighter;
+		text-shadow: $textShadow;
+		line-height: 2;
+	}
+	span {
+		font-weight: bold;
+	}
 }
 
 .events > h2 {
 	font-weight: lighter;
-}
-
-.events p {
-	font-weight: lighter;
-	text-shadow: 1px 1px 10px black;
-}
-.events span {
-	font-weight: bold;
 }
 
 .card {
@@ -397,61 +400,55 @@ h2 {
 	margin-bottom: 1em;
 	text-align: center;
 	line-height: 1.3;
-	color: rgb(225, 224, 224);
+	color: $cardTextColor;
 	overflow: hidden;
-}
-
-.card h2 {
-	text-shadow: 1px 1px 10px black;
-}
-
-.card img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	min-height: 100%;
-	object-fit: cover;
-	padding-bottom: 1em;
-	z-index: -1;
+	h2 {
+		text-shadow: $textShadow;
+	}
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100%;
+		object-fit: cover;
+		padding-bottom: 1em;
+		z-index: -1;
+	}
 }
 
 .overlay {
 	max-height: 100%;
 
 	padding: 1.5em;
+	button {
+		color: $cardTextColor;
+		background-color: transparent;
+		border: solid 1px $cardTextColor;
+		text-shadow: $textShadow;
+
+		text-transform: uppercase;
+		padding: 1.5em 5em;
+		margin-bottom: 2em;
+		font-size: 10px;
+		cursor: pointer;
+		&:hover {
+			border-bottom: solid 2px $cardTextColor;
+		}
+	}
 }
 
-.overlay button {
-	color: rgb(225, 224, 224);
-	background-color: transparent;
-	border: solid 1px rgb(225, 224, 224);
-	text-shadow: 1px 1px 10px black;
+// **********************************
 
-	text-transform: uppercase;
-	padding: 1.5em 5em;
-	margin-bottom: 2em;
-	font-size: 10px;
-	cursor: pointer;
-}
-
-.overlay button:hover {
-	border-bottom: solid 2px rgb(225, 224, 224);
-}
-
+// **********SPEAKERS SECTION**********
 .speakers {
 	width: 100%;
-	border-bottom: #c9a16e solid 1px;
+	border-bottom: $goldBorder;
 	margin-top: 2em;
 	padding-bottom: 2em;
-}
-
-.speakers h2 {
-	font-size: 1.2em;
-}
-
-.speakers img {
-	width: 100%;
+	img {
+		width: 100%;
+	}
 }
 
 .speaker {
@@ -460,26 +457,27 @@ h2 {
 	font-weight: lighter;
 	line-height: 1.5;
 	padding-bottom: 1em;
+	h3 {
+		text-align: center;
+		font-weight: lighter;
+		margin-top: 5px;
+	}
+	p {
+		font-size: 15px;
+		line-height: 2;
+	}
 }
 
-.speaker h3 {
-	text-align: center;
-	font-weight: lighter;
-	margin-top: 5px;
-}
+// *************************************
 
-.speaker p {
-	font-size: 15px;
-}
-
+// **********HOSTS SECTION**********
 .hosts {
 	width: 100%;
 	margin-top: 2em;
 	padding-bottom: 2em;
-}
-
-.hosts img {
-	width: 100%;
+	img {
+		width: 100%;
+	}
 }
 
 .host {
@@ -488,36 +486,36 @@ h2 {
 	font-weight: lighter;
 	line-height: 1.5;
 	padding-bottom: 1em;
+	h3 {
+		text-align: center;
+		font-weight: lighter;
+		margin-top: 5px;
+	}
+	p {
+		font-size: 15px;
+		line-height: 2;
+	}
 }
 
-.host h3 {
-	text-align: center;
-	font-weight: lighter;
-	margin-top: 5px;
-}
+// **********************************
 
-.host p {
-	font-size: 15px;
-}
-
+// **********FOOTER**********
 .footer-icons {
 	height: 170px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	border-top: #c9a16e solid 1px;
-	border-bottom: #c9a16e solid 1px;
+	border-top: $goldBorder;
+	border-bottom: $goldBorder;
 	padding: 0 2em;
 	cursor: pointer;
-}
-
-.footer-icons i {
-	justify-self: center;
-	align-self: center;
-}
-
-.footer-icons i:hover {
-	color: #c9a16e;
+	i {
+		justify-self: center;
+		align-self: center;
+		&:hover {
+			color: $goldColor;
+		}
+	}
 }
 
 .links {
@@ -527,20 +525,18 @@ h2 {
 
 	font-size: 12px;
 	padding-top: 2em;
-}
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 12px;
 
-.links a {
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 12px;
-
-	color: #000;
-	font-weight: lighter;
-	padding: 2em;
-}
-
-.links a:hover {
-	color: #c9a16e;
+		color: $blackColor;
+		font-weight: lighter;
+		padding: 2em;
+		&:hover {
+			color: $goldColor;
+		}
+	}
 }
 
 .copyright {
@@ -564,7 +560,7 @@ h2 {
 		width: 70%;
 	}
 
-	.crazy-img-part {
+	.img-intro {
 		height: calc(700px + 110vw);
 	}
 
@@ -589,6 +585,19 @@ h2 {
 		width: 90%;
 		gap: 1em;
 		margin: auto;
+	}
+
+	.overlay button {
+		margin-top: 3em;
+	}
+
+	.card {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		img {
+			padding-bottom: 0;
+		}
 	}
 
 	.card:nth-child(1) {
@@ -624,16 +633,6 @@ h2 {
 		margin-bottom: 2em;
 	}
 
-	.card {
-		padding: 0;
-		margin: 0;
-		width: 100%;
-	}
-
-	.card img {
-		padding-bottom: 0;
-	}
-
 	.speaker,
 	.host {
 		display: grid;
@@ -657,21 +656,20 @@ h2 {
 	}
 
 	.lower-nav {
+		overflow-x: hidden;
 		justify-content: space-around;
-	}
-
-	.lower-nav a {
-		margin-left: 0;
-		margin-right: 0;
+		a {
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 
 	.nav-icons {
 		justify-content: space-around;
 		margin: 0 1em;
-	}
-
-	.nav-icons i {
-		padding: 0 1em;
+		i {
+			padding: 0 1em;
+		}
 	}
 
 	.burger {
@@ -703,8 +701,13 @@ h2 {
 		margin: auto;
 	}
 
-	.overlay h2 {
-		font-size: 2em;
+	.overlay {
+		h2 {
+			font-size: 2em;
+		}
+		button {
+			font-size: 0.8em;
+		}
 	}
 
 	.events h2,
@@ -743,10 +746,19 @@ h2 {
 	.host img {
 		margin-top: 3.5em;
 	}
+
+	.footer-icons {
+		display: flex;
+		justify-content: space-evenly;
+	}
 }
 
 @media screen and (min-width: 1300px) {
-	.crazy-img-part {
+	.dropdown {
+		width: 35%;
+	}
+
+	.img-intro {
 		height: calc(700px + 80vw);
 	}
 	.main-page-heading-div {

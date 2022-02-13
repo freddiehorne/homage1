@@ -1,8 +1,19 @@
-.nav-links a:nth-child(5) {
-	border-bottom: #c9a16e solid 2px;
-}
-.nav-links a:nth-child(4) {
-	border-bottom: none;
+// **********COLOR VARIABLES**********
+$backgroundColor: #fff;
+$goldColor: #c9a16e;
+$goldBorder: #c9a16e 2px solid;
+$borderColor: #a9a9a9 1px solid;
+$blackColor: #000;
+$cardTextColor: #e1e0e0;
+// **********************************
+
+.nav-links a {
+	&:nth-child(5) {
+		border-bottom: $goldBorder;
+	}
+	&:nth-child(4) {
+		border-bottom: none;
+	}
 }
 
 .special-container {
@@ -15,24 +26,21 @@
 	background-size: cover;
 	background-position: center;
 
-	color: rgb(225, 224, 224);
+	color: $cardTextColor;
 	text-align: center;
 	text-shadow: 1px 1px 10px black;
-}
-
-.special h2 {
-	font-weight: bold;
-	font-size: 1.2em;
-	text-transform: initial;
-	padding-top: 2em;
-}
-
-.special button {
-	display: none;
-}
-
-.special p {
-	font-weight: lighter;
+	h2 {
+		font-weight: bold;
+		font-size: 1.2em;
+		text-transform: initial;
+		padding-top: 2em;
+	}
+	button {
+		display: none;
+	}
+	p {
+		font-weight: lighter;
+	}
 }
 
 .special-container:nth-child(2) > div {
@@ -63,31 +71,30 @@
 	.special {
 		height: 440px;
 		margin-top: 40px;
-	}
-
-	.special h2 {
-		font-size: 2.6em;
-	}
-
-	.special p {
-		font-size: 20px;
+		h2 {
+			font-size: 2.6em;
+		}
+		p {
+			font-size: 20px;
+		}
 	}
 
 	.special button {
 		display: initial;
-		color: rgb(225, 224, 224);
+		color: $cardTextColor;
 		background-color: transparent;
-		border: solid 1px rgb(225, 224, 224);
+		border: solid 1px $cardTextColor;
 		text-shadow: 1px 1px 10px black;
 
 		text-transform: uppercase;
 		padding: 1em 2em;
 		margin-bottom: 2em;
+		margin-top: 3em;
 		font-size: 0.8em;
 		cursor: pointer;
-	}
-	.special button:hover {
-		border-bottom: solid 2px rgb(225, 224, 224);
+		&:hover {
+			border-bottom: solid 2px $cardTextColor;
+		}
 	}
 }
 

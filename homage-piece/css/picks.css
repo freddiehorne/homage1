@@ -1,5 +1,5 @@
 .nav-links a:nth-child(3) {
-  border-bottom: #c9a16e solid 2px;
+  border-bottom: #c9a16e 2px solid;
 }
 
 .nav-links a:nth-child(4) {
@@ -47,6 +47,7 @@
 }
 
 .picks-icon {
+  background-color: #ededed7e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +60,6 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #ededed7e;
 }
 
 .picks-icon i {
