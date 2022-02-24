@@ -97,8 +97,8 @@ html {
 	box-sizing: inherit;
 }
 
-@import "/css/picks.scss" // **********GENERAL VARIABLES**********
-	$backgroundColor: #fff;
+// @import "./picks.css" // **********GENERAL VARIABLES**********
+$backgroundColor: #fff;
 $goldColor: #c9a16e;
 $goldBorder: #c9a16e 2px solid;
 $borderColor: #a9a9a9 1px solid;
@@ -723,12 +723,13 @@ h2 {
 	}
 
 	.speaker-container {
+		width: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: repeat(5, 1fr);
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 	}
 
-	.speaker {
+	.speaker .host {
 		height: 100%;
 	}
 
@@ -736,10 +737,6 @@ h2 {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
-	}
-
-	.host {
-		height: 100%;
 	}
 
 	.speaker img,

@@ -44,23 +44,23 @@ $cardTextColor: #e1e0e0;
 }
 
 .special-container:nth-child(2) > div {
-	background-image: url(/assets/images/special-bg1.jpeg);
+	background-image: url(../assets/images/special-bg1.jpeg);
 }
 
 .special-container:nth-child(3) > div {
-	background-image: url(/assets/images/special-bg2.jpg);
+	background-image: url(../assets/images/special-bg2.jpg);
 }
 
 .special-container:nth-child(4) > div {
-	background-image: url(/assets/images/special-bg3.jpg);
+	background-image: url(../assets/images/special-bg3.jpg);
 }
 
 .special-container:nth-child(5) > div {
-	background-image: url(/assets/images/special-bg4.jpg);
+	background-image: url(../assets/images/special-bg4.jpg);
 }
 
 .special-container:nth-child(6) > div {
-	background-image: url(/assets/images/special-bg5.jpg);
+	background-image: url(../assets/images/special-bg5.jpg);
 }
 
 @media screen and (min-width: 599px) {
