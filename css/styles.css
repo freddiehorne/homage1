@@ -208,7 +208,7 @@ nav a {
   font-size: 0.7em;
   font-weight: 100;
   margin: 1em;
-  padding: 0.5em 1em;
+  padding: 1.1em 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -817,6 +817,12 @@ h2 {
   }
   .bottom-img-div {
     height: 80vw;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .nav-h1 {
+    padding-left: 10%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
